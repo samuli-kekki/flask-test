@@ -8,7 +8,7 @@
 - [x] Create initial folder structure
 - [x] Create app main file
 - [x] Create docker-compose and Docker files
-- [ ] Add gunicorn
+- [x] Add gunicorn
 - [x] Test with dummy GET API
 - [ ] Create SQLAlchemy model class for measurements, create tables
 - [ ] Implement measurement class
