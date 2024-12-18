@@ -1,5 +1,6 @@
 from flask import Flask
 import os
+from .routes import measurement_blueprint
 
 def create_app():
     app = Flask(__name__)
@@ -8,9 +9,6 @@ def create_app():
     # For production, it would have to be specified in Kubernetes Pod manifest, etc.
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URL")
 
-    # Testing ... TODO remove later
-    @app.route('/', methods=['GET'])
-    def test_handler():
-        return "hi"
-        
+    app.register_blueprint(measurement_blueprint)
+
     return app

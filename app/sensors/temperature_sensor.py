@@ -5,7 +5,7 @@ import math
 import time
 from datetime import datetime
 
-class Temperatur(Sensor):
+class Temperature(Sensor):
     """ Temperature sensor """
 
     def value(self) -> Measurement:

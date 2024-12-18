@@ -13,7 +13,7 @@
 - [ ] Create SQLAlchemy model class for measurements, create tables
 - [x] Implement measurement class
 - [x] Implement manager that throttles measurements and implements a generator
-- [ ] Create a streaming GET API and return temperatures as SSE now (Server-Sent Events)
+- [x] Create a streaming GET API and return temperatures as SSE now (Server-Sent Events)
 - [ ] Create a thread that stores temperatures to database
 - [ ] Create GET API that returns N latest values from the database
 - [ ] Test that it works in Docker too
@@ -35,3 +35,7 @@ docker-compose up measurement_postgres
 As we are not using -d, you can stop the server with CTRL-C.
 
 The data in the database is not persisted.
+
+# Notes:
+
+Investigate what is a good way to return streaming temperatures. Currently it is returning JSON fragments, not one complete JSON document.
