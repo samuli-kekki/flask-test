@@ -16,7 +16,7 @@
 - [x] Create a streaming GET API and return temperatures as SSE now (Server-Sent Events)
 - [x] Create a thread that stores temperatures to database
 - [x] Create GET API that returns N latest values from the database
-- [ ] Test that it works in Docker too
+- [x] Test that it works in Docker too
 - [ ] Document code
 - [ ] Unit and integration tests
 - [ ] Generate API documentation (investigate Flasgger, Flask-RESTPlus, Flask-OpenAPI3, APIFairy, etc.)
@@ -42,7 +42,7 @@ Investigate what is a good way to return streaming temperatures. Currently it is
 
 Investiagate adding index for timestamp column in the database schema. How to add indexes with SQLAlchemy?
 
-Investigate using a time series database.
+Investigate using a time series database
 
 datetime.utcnow is deprecated, investigate alternative
 
@@ -50,3 +50,4 @@ Input validation for the APIs (limit could have a range of acceptable values)
 
 Handle app shut down gracefully in persisting thread
 
+When using Gunicorn, we have multiple background threads that are persisting measurement to database. Investigate alternative solutions. We would need some kind of background task (Celery)?
