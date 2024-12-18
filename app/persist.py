@@ -5,7 +5,10 @@ from .database_models import PersistedMeasurement
 from . import db
 from threading import Thread
 
-def persist_temperatures(app):
+def _persist_temperatures(app):
+    """ Runs a loop that reads values from temperature sensor
+    and stores in the database. Should be called in a seaprate thread."""
+
     # Need to push app context to be able to use the db.
     with app.app_context():
         sensor = Temperature()
@@ -27,7 +30,8 @@ def persist_temperatures(app):
             app.logger.info("Persisted temperature")
 
 def start_persisting(app):
-    """ Starts a background thread """
-    t = Thread(target=persist_temperatures, args=(app, ))
+    """ Starts a background thread to persist
+    sensor measurements to database. """
+    t = Thread(target=_persist_temperatures, args=(app, ))
     t.daemon = True # Stop automatically at app shut down
     t.start()

@@ -1,5 +1,7 @@
 
 class Measurement:
+    """ Data class for one measurement from a sensor. """
+
     value: float # Value of the measurement
     timestamp: str # ISO string of measurement date
 

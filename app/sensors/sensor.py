@@ -6,7 +6,8 @@ class Sensor(ABC):
 
     @abstractmethod
     def value(self) -> Measurement:
-        """ Get measurement """
+        """ Get sensor reading as Measurement
+            Returns: Measurement """
         pass
 
     @abstractmethod

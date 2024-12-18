@@ -9,6 +9,9 @@ measurement_blueprint = Blueprint('measurement', __name__, url_prefix='/measurem
 
 @measurement_blueprint.route('/temperature/stream', methods=['GET'])
 def get_temperature_stream():
+    """Get a streaming response of temperature measurements.
+    Returns:
+        Streaming response (Server-Sent Events, i.e. text/event-stream)"""
 
     # Stream content with a generator function, i.e. Server-Sent Events:
     # https://flask.palletsprojects.com/en/stable/patterns/streaming/
@@ -27,7 +30,12 @@ def get_temperature_stream():
 
 @measurement_blueprint.route('/temperature', methods=['GET'])
 def get_temperatures():
-    """ Return N most recent readings from the database """
+    """ Return top historical measurements from the database.
+    Args:
+        limit Optional[int]: The number of measurements.
+            If not specified, all measurements are returned.
+    Returns:
+        str: A JSON document of historical measurements. """
 
     num_readings = request.args.get("limit", type=int)
     # Get only temperature results (although we only have temperatures for now)

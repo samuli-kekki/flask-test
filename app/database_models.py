@@ -2,10 +2,11 @@ from . import db
 from datetime import datetime
 
 # When we call db.create_all(),
-# SQLAlchemy will create a new table called measurements with this schema.
+# SQLAlchemy creates a new table called measurements with this schema.
 
 class PersistedMeasurement(db.Model):
-    """ This is extended from SQLAlchemy class. """
+    """ PersistedMeasurement persist a specific sensor measurement to database.
+    This is extended from SQLAlchemy class. """
 
     __tablename__ = 'measurements' # The name of the table in our database
 
