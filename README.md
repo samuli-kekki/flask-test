@@ -39,3 +39,9 @@ The data in the database is not persisted.
 # Notes:
 
 Investigate what is a good way to return streaming temperatures. Currently it is returning JSON fragments, not one complete JSON document.
+
+Investiagate adding index for timestamp column in the database schema. How to add indexes with SQLAlchemy?
+
+Investigate using a time series database.
+
+
