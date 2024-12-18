@@ -14,7 +14,7 @@
 - [x] Implement measurement class
 - [x] Implement manager that throttles measurements and implements a generator
 - [x] Create a streaming GET API and return temperatures as SSE now (Server-Sent Events)
-- [ ] Create a thread that stores temperatures to database
+- [x] Create a thread that stores temperatures to database
 - [x] Create GET API that returns N latest values from the database
 - [ ] Test that it works in Docker too
 - [ ] Document code
@@ -47,3 +47,6 @@ Investigate using a time series database.
 datetime.utcnow is deprecated, investigate alternative
 
 Input validation for the APIs (limit could have a range of acceptable values)
+
+Handle app shut down gracefully in persisting thread
+
