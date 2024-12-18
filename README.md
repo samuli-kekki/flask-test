@@ -36,7 +36,7 @@ As we are not using -d, you can stop the server with CTRL-C.
 
 The data in the database is not persisted.
 
-# Notes:
+# Notes
 
 Investigate what is a good way to return streaming temperatures. Currently it is returning JSON fragments, not one complete JSON document.
 
@@ -51,3 +51,13 @@ Input validation for the APIs (limit could have a range of acceptable values)
 Handle app shut down gracefully in persisting thread
 
 When using Gunicorn, we have multiple background threads that are persisting measurement to database. Investigate alternative solutions. We would need some kind of background task (Celery)?
+
+Background thread does not seem to start in docker-compose if not using Gunicorn. It does start when running on command line.
+
+# Sources
+
+I read these pages to learn about the project.
+
+https://dev.to/francescoxx/python-crud-rest-api-using-flask-sqlalchemy-postgres-docker-docker-compose-3kh4
+https://flask.palletsprojects.com/en/stable/patterns/sqlalchemy/
+https://docs.sqlalchemy.org/en/20/dialects/postgresql.html
