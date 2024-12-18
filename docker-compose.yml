@@ -1,0 +1,32 @@
+# I read that using version is outdated
+#version: "3.9"
+
+services:
+  measurement_app:
+    container_name: measurement_app
+    image: measurement_app_image:0.0.1
+    build: . # Use Dockerfile in this folder
+    ports:
+      - "8000:8000"
+    environment:
+      # Refers to Postgres below
+      - DB_URL=postgresql://postgres:postgres@measurement_postgres:5432/postgres
+    depends_on:
+      # Start Postgres first
+      - measurement_postgres
+
+  measurement_postgres:
+    container_name: measurement_postgres
+    # Don't care about the version for this test
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+    # No need to store the data in volumes for this test,
+    # so no volumes are specified.
+
+# For local development (when running the app on command line) you can use this database string:
+# postgresql://postgres:postgres@localhost:5432/postgres

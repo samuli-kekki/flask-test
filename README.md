@@ -7,7 +7,7 @@
 - [x] Create .gitignore
 - [x] Create initial folder structure
 - [x] Create app main file
-- [ ] Create docker-compose and Docker files
+- [x] Create docker-compose and Docker files
 - [ ] Add gunicorn
 - [x] Test with dummy GET API
 - [ ] Create SQLAlchemy model class for measurements, create tables
@@ -20,3 +20,18 @@
 - [ ] Document code
 - [ ] Unit and integration tests
 - [ ] Generate API documentation (investigate Flasgger, Flask-RESTPlus, Flask-OpenAPI3, APIFairy, etc.)
+
+# Documentation
+
+Use following command to build & start the app and the database:
+docker-compose up
+
+Following builds the app:
+docker-compose build
+
+This starts only the database if you'd like to test the app on command line:
+docker-compose up measurement_postgres
+
+As we are not using -d, you can stop the server with CTRL-C.
+
+The data in the database is not persisted.
