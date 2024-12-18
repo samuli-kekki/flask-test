@@ -12,7 +12,7 @@
 - [x] Test with dummy GET API
 - [ ] Create SQLAlchemy model class for measurements, create tables
 - [x] Implement measurement class
-- [ ] Implement manager that throttles measurements and implements a generator
+- [x] Implement manager that throttles measurements and implements a generator
 - [ ] Create a streaming GET API and return temperatures as SSE now (Server-Sent Events)
 - [ ] Create a thread that stores temperatures to database
 - [ ] Create GET API that returns N latest values from the database
