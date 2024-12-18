@@ -1,0 +1,4 @@
+Flask
+# Note: psycopg (=3) exists! Try it next time.
+psycopg2-binary
+Flask-SQLAlchemy
