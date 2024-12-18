@@ -3,13 +3,13 @@
 # TODO
 
 - [x] Create requirements.txt file
-- [ ] Create virtual environment
-- [ ] Create .gitignore
-- [ ] Create initial folder structure
-- [ ] Create app main file
+- [x] Create virtual environment
+- [x] Create .gitignore
+- [x] Create initial folder structure
+- [x] Create app main file
 - [ ] Create docker-compose and Docker files
 - [ ] Add gunicorn
-- [ ] Try with dummy GET API
+- [x] Test with dummy GET API
 - [ ] Create SQLAlchemy model class for measurements, create tables
 - [ ] Implement measurement class
 - [ ] Implement manager that throttles measurements and implements a generator
