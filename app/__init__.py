@@ -1,6 +1,5 @@
 from flask import Flask
 import os
-from .routes import measurement_blueprint
 from flask_sqlalchemy import SQLAlchemy
 
 # We store db reference here, maybe could store somewhere else?
@@ -17,6 +16,8 @@ def create_app():
     db.init_app(app)
 
     # Register blueprint (request routes) with the app
+    # Import here to prevent circular imports with db
+    from .routes import measurement_blueprint
     app.register_blueprint(measurement_blueprint)
 
     # Need to "push" the context since this is outside of request

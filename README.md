@@ -10,12 +10,12 @@
 - [x] Create docker-compose and Docker files
 - [x] Add gunicorn
 - [x] Test with dummy GET API
-- [ ] Create SQLAlchemy model class for measurements, create tables
+- [x] Create SQLAlchemy model class for measurements, create tables
 - [x] Implement measurement class
 - [x] Implement manager that throttles measurements and implements a generator
 - [x] Create a streaming GET API and return temperatures as SSE now (Server-Sent Events)
 - [ ] Create a thread that stores temperatures to database
-- [ ] Create GET API that returns N latest values from the database
+- [x] Create GET API that returns N latest values from the database
 - [ ] Test that it works in Docker too
 - [ ] Document code
 - [ ] Unit and integration tests
@@ -44,4 +44,6 @@ Investiagate adding index for timestamp column in the database schema. How to ad
 
 Investigate using a time series database.
 
+datetime.utcnow is deprecated, investigate alternative
 
+Input validation for the APIs (limit could have a range of acceptable values)

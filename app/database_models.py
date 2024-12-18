@@ -15,7 +15,7 @@ class PersistedMeasurement(db.Model):
     value = db.Column(db.Float, nullable=False)
     # Timestamp of the measurement. It is using Postgres datatime type here,
     # alghough our code is using strings mostly.
-    timestamp = db.Column(db.DateTime, default=datetime.timezone.utc, nullable=False)  # Timestamp field
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)  # Timestamp field
     # Unit of the measurement, e.g. "Celcius"
     unit = db.Column(db.String(20), nullable=False)
     # Name of the measurement, e.g. "Temperature"
